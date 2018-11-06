@@ -13,12 +13,15 @@ public class SlotMachineService {
 	private int numero2;
 	private int numero3;
 	
+	
+	
 	@PostConstruct
 	public void init() {
 		
-		numero1 = (int) (Math.random() + 2);
-		numero2 = (int) (Math.random() + 2);
-		numero3 = (int) (Math.random() + 2);
+		Random r = new Random();
+		numero1 =  r.nextInt(3);
+		numero2 =  r.nextInt(3);
+		numero3 =  r.nextInt(3);
 		
 		
 
