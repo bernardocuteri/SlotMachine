@@ -1,6 +1,5 @@
 package it.unical.asde2018.slot_machine.components.services;
 
-import java.nio.file.attribute.UserPrincipalNotFoundException;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -26,21 +25,17 @@ public class SlotMachineService
 		loggedUsers.add(new User("doc", 200));
 		this.triple = new Triple(0, 0, 0);
 	}
-	
 
 	public Triple getTriple() {
 		return triple;
 	}
 
-
 	public boolean winLose() {
-		System.out.println(triple.getFirst() + "   " + triple.getSecond() + "    " + triple.getThird());
 		return (triple.getFirst() == triple.getSecond() && triple.getSecond() == triple.getThird());
 
 	}
-	
-	public void setUserCoin (String username, int quantiy)
-	{
+
+	public void setUserCoin(String username, int quantiy) {
 		for (User u : loggedUsers)
 			if (u.getUsername().equals(username))
 				u.setCoins(u.getCoins() + quantiy);

@@ -32,20 +32,18 @@ public class SlotMachineController
 	@GetMapping("/takeasslot")
 	public String takeASlot(HttpSession session, Model model, @RequestParam int bet) {
 
-		String winLose = null;
-
+	
 		model.addAttribute("values", sms.getATriple());
 		if (sms.winLose())
 		{
 			sms.setUserCoin(session.getAttribute("username").toString(), 9 * bet);
-			winLose = "win";
-
+			model.addAttribute("winlose", "Hai vinto");
 		} else
 		{
 			sms.setUserCoin(session.getAttribute("username").toString(), -bet);
-			winLose = "lose";
+			model.addAttribute("winlose", "Ritenta");
 		}
-		model.addAttribute("winlose", winLose);
+		
 		return "redirect:/slot-machine";
 	}
 }
