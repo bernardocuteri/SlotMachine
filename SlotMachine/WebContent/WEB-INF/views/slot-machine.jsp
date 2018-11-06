@@ -45,9 +45,6 @@ footer {
 <body>
 	<h1>Let's Spin!</h1>
 	
-	Input your betting coins:
-	<input type="number" name="number" min="1">
-	<input type="submit"> 
 
 	<div>
 		<h4>${user}</h4>
