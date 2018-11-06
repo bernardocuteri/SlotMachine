@@ -49,17 +49,14 @@
 					</c:if>
 				</div>
 				<br> <br>
-				<form class="form" action="play">
-					<div class="dropdown">
-						<button class="btn btn-primary dropdown-toggle" type="button"
-							data-toggle="dropdown">
-							Seleziona l'importo da giocare<span class="caret"></span>
-						</button>
-						<ul class="dropdown-menu">
-							<li><a>5</a></li>
-							<li><a>10</a></li>
-							<li><a>20</a></li>
-						</ul>
+				<form class="form" action="play" name="value">
+					<h3>Seleziona l'importo da giocare</h3>
+					<div>
+						<select name="importo">
+							<option value="5">5</option>
+							<option value="10">10</option>
+							<option value="20">20</option>
+						</select>
 					</div>
 					<br> <br>
 
