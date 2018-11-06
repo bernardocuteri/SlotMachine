@@ -32,30 +32,92 @@
 	</form>
 	
 	<div class="container-fluid">
+	<div class="row"> 
+	<h1>HI ${user}, is it your lucky day?</h1>
+	</div>
 <div class="row">
-<h1>${wallet.amoutOfCoin }</h1>
+<h1>Your current balance is ${wallet.amoutOfCoin }</h1>
 </div>
+
 <div class="row">
 
 <div class="col-md-6">
 
- <img src="resources/0.png">
- <img src="resources/1.png">
- <img src="resources/1.png">
+<c:if test="${!firstTime}">
+<h1>${numbers.number1 }</h1>
+ <h1>${numbers.number2 }</h1>
+ <h1>${numbers.number3 }</h1>
+ </c:if>
+ 
+ <c:if test="${numbers.number1 == 1}">
+ <img src="resources/1.png"/>
+ </c:if>
+ <c:if test="${numbers.number1 == 2}">
+ <img src="resources/2.png"/>
+ </c:if>
+ 
+ <c:if test="${numbers.number1 == 0}">
+ <img src="resources/0.png"/>
+ </c:if>
+ 
+
+ <c:if test="${numbers.number2==1}">
+ <img src="resources/1.png"/>
+ </c:if>
+ <c:if test="${numbers.number2==2}">
+ <img src="resources/2.png"/>
+ </c:if>
+ 
+ <c:if test="${numbers.number2==0}">
+ <img src="resources/0.png"/>
+ </c:if>
+ 
+
+ <c:if test="${numbers.number3==1}">
+ <img src="resources/1.png"/>
+ </c:if>
+ <c:if test="${numbers.number3==2}">
+ <img src="resources/2.png"/>
+ </c:if>
+ 
+ <c:if test="${numbers.number3==0}">
+ <img src="resources/0.png"/>
+ </c:if>
  
  </div>
+
  
- 
 
 
-
+<c:if test="${!wallet.emptyCoin}">
 <form method="post">
 <button type="submit" name="bet5" class="btn btn-info" >BET 5$</button>
 <button type="submit" name="bet10" class="btn btn-info" >BET 10$</button>
 <button type="submit" name="bet20" class="btn btn-info" >BET 20$</button>
 </form>
+</c:if>
 </div>
 </div>
+
+<c:if test="${wallet.emptyCoin}">
+<div class="alert alert-danger" role="alert">
+ 		You have finished the money !
+		</div>
+</c:if>
+<c:if test="${!firstTime}">
+<c:if test="${winMatch}">
+<div class="alert alert-success" role="alert">
+ 		Good, You won !
+		</div>
+</c:if>
+
+<c:if test="${!winMatch && !wallet.emptyCoin}">
+<div class="alert alert-danger" role="alert">
+ 		Oh no, Try again!
+		</div>
+</c:if>
+</c:if>
+
 
 <!-- jQuery (necessary for Bootstrap's JavaScript plugins) --> 
 <script src="resources/js/jquery-1.11.3.min.js"></script>
