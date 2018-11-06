@@ -65,6 +65,10 @@ public class LoginController {
 				model.addAttribute("message","");
 				return "slot-machine";
 			}
+			if((int)session.getAttribute("coins")<=bets) {
+				model.addAttribute("message","Non puoi giocare");
+				return "slot-machine";
+			}
 			System.out.println("sono qui1");
 			slotMachine.setCoins((int)session.getAttribute("coins"));
 			slotMachine.setCoins(slotMachine.getCoins()+slotMachine.play(bets));
