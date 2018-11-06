@@ -1,4 +1,5 @@
 <!DOCTYPE html>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <html lang="en">
 <head>
   <title>Slot Machine</title>
@@ -18,14 +19,36 @@
   <table class="table">
     <thead>
       <tr>
-        <th width="30%"></th>
-       	<th width="40%">Firstname</th>
-       	<th width="30%"></th>
+        <th>Select your bid</th>
+       	<th>
+       		 <div class="container">				
+				  <form action = "slot-game">
+				    <label class="radio-inline">
+				      <input type="radio" name="optradio" checked>5 coins
+				    </label>
+				    <label class="radio-inline">
+				      <input type="radio" name="optradio">10 coins
+				    </label>
+				    <label class="radio-inline">
+				      <input type="radio" name="optradio">20 coins
+				    </label>
+				    <button type="submit" class="btn btn-default">Bid</button>
+				  </form>
+				</div>
+
+       	</th>       	
       </tr>
     </thead>
     <tbody>
       <tr>
-        <td>John</td>
+        <td>
+        	<c:if test = " ${result > 0}">
+			 	<div class="alert alert-danger alert-dismissible fade in">
+				    <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+				    <strong>You won!</strong> <h4>${error}</h4>
+			  	</div>
+			 </c:if>
+        </td>
         
       
     </tbody>
