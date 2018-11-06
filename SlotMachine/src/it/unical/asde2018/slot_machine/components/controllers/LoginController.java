@@ -23,7 +23,7 @@ public class LoginController {
 	@GetMapping("/")
 	public String index(HttpSession session) {
 		if (session.getAttribute("user") != null) {			
-			return "redirect:slotmachine";
+			return "slot-machine";
 		} else {
 			return "login";
 		}
@@ -41,7 +41,7 @@ public class LoginController {
 			return "login";
 		}
 		session.setAttribute("user", logged);
-		return "redirect:slotmachine";
+		return "redirect:/";
 	}
 
 	@GetMapping("/doLogout")
