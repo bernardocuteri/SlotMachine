@@ -36,7 +36,7 @@ public class SlotMachineController {
 				model.addAttribute("numbers",slot.getNumbers());
 				model.addAttribute("started", true);
 			}catch (Exception e) {
-				model.addAttribute("finished","You have finished your credits");
+				model.addAttribute("finished","not enough credits");
 			}
 		}else {
 			slot.startGame(user);

@@ -103,6 +103,12 @@
 					</div>
 
 				</c:if>
+				<c:if test="${not empty finished}">
+				<div class="col-lg-4 col-lg-offset-4 alert alert-danger">
+						<strong>Be careful!</strong> ${finished }.
+					</div>
+				
+				</c:if>
 
 
 
