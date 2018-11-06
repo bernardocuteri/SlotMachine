@@ -39,7 +39,7 @@
 		
 		<form action="">
 		 <input style="width: 10%"
-			type="submit" formaction="restart" value="Restart">
+			type="submit" formaction="Restart" value="Restart">
 		</form>
 		<c:if test="${win != null}">
 		<p>Sono usciti<br>   ${first}         ${second}        ${third}</p><br>

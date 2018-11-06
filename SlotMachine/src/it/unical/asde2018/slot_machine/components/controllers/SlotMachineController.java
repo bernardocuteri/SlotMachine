@@ -43,6 +43,16 @@ public class SlotMachineController {
 		return "redirect:/";
 	}
 	
+	@GetMapping("/Restart")
+	public String restart(HttpSession session,Model model)
+	{
+		String username =(String) session.getAttribute("username");
+		slotMachineService.setCoins(username,200);
+		session.invalidate();
+		return "redirect:/";
+		
+	}
+	
 	
 	
 
