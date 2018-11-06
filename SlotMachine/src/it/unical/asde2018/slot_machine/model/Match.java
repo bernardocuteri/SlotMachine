@@ -6,8 +6,6 @@ public class Match
 {
 	private final int START_COIN = 200;
 
-	private boolean firstGame;
-
 	private int numberLeft;
 	private int numberCenter;
 	private int numberRight;
@@ -18,7 +16,6 @@ public class Match
 
 	public Match()
 	{
-		setFirstGame(true);
 		setBalance(START_COIN);
 		generateNumber();
 	}
@@ -103,15 +100,4 @@ public class Match
 	{
 		return START_COIN;
 	}
-
-	public boolean isFirstGame()
-	{
-		return firstGame;
-	}
-
-	public void setFirstGame(boolean firstGame)
-	{
-		this.firstGame = firstGame;
-	}
-
 }
