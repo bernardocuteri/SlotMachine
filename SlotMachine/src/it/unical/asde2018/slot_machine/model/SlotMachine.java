@@ -4,12 +4,11 @@ import java.util.Random;
 
 public class SlotMachine {
 
-	private int[] slots;
-	private int coins;
+	private final int[] slots;
 	private final Random r;
 
 	public SlotMachine() {
-		coins = 200;
+		slots = new int[3];
 		r = new Random();
 	}
 
@@ -19,16 +18,8 @@ public class SlotMachine {
 		}
 	}
 
-	public int getCoins() {
-		return coins;
-	}
-
 	public boolean win() {
 		return slots[0] == slots[1] && slots[1] == slots[2];
-	}
-
-	public void setCoins(int coins) {
-		this.coins = coins;
 	}
 
 	public int[] getSlots() {

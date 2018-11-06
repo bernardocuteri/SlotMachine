@@ -32,7 +32,9 @@ public class SlotMachineController {
 		final User user = (User) session.getAttribute("user");
 		final SlotMachine slotMachine = (SlotMachine) session.getAttribute("slotMachine");
 		slotMachineService.beat(beatChoice, slotMachine, user.getUsername());
-//		model.addAttribute("slotMachine", slotMachineService.getSlotMachine());
+		if (slotMachine.win()) {
+			model.addAttribute("winMessage", "HAI VINTO!");
+		}
 		model.addAttribute("coins", slotMachineService.getUserCoins(user.getUsername()));
 		return "slot-machine";
 	}

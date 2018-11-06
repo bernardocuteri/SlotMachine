@@ -35,7 +35,13 @@
 	  	</div>
 	  	
 	  	<div class="row">
-	  		
+	  		<c:if test="${coins ge 5}">
+	  			<c:forEach items="${slotMachine.slots}" var="slot">
+	  			<div class="col-sm-4">
+	  				<img src="resources/${slot}.png" class="img-circle" alt="slot">
+	  			</div>
+	  			</c:forEach>
+	  		</c:if>
 	  	</div>
 	  	
 	  	<c:if test="${coins ge 5}">
