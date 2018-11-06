@@ -9,7 +9,7 @@ import it.unical.asde2018.slot_machine.domain.Player;
 @Service
 public class SlotMachineService {
 
-	public void gioca(Player player, int bet) {
+	public void play(Player player, int bet) {
 		if (win()) {
 			player.setCoins(player.getCoins() + bet * 9);
 		} else {

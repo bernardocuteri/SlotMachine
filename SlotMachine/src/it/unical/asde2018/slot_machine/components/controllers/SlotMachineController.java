@@ -38,7 +38,7 @@ public class SlotMachineController
 
 		Player player = (Player) session.getAttribute("player");
 
-		slotMachine.gioca(player, Integer.parseInt(bet));
+		slotMachine.play(player, Integer.parseInt(bet));
 
 		session.setAttribute("player", player);
 
