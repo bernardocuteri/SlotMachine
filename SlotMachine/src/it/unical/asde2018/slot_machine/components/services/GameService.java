@@ -1,12 +1,8 @@
 package it.unical.asde2018.slot_machine.components.services;
 
-import it.unical.asde2018.slot_machine.components.models.Bet;
 import it.unical.asde2018.slot_machine.components.models.Quiz;
-import it.unical.asde2018.slot_machine.components.models.User;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import javax.servlet.http.HttpSession;
 import java.util.Random;
 
 @Service
