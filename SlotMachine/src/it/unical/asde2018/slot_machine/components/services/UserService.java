@@ -103,4 +103,8 @@ public class UserService {
         session.setAttribute(this.getUserWinCountKey(user), user.getWinCount());
         session.setAttribute(this.getUserLoseCountKey(user), user.getLoseCount());
     }
+
+    public boolean hasValidCoins(User user, Bet bet) {
+        return user.getCoins() >= bet.getCoins();
+    }
 }

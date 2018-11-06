@@ -40,9 +40,11 @@ public class SlotMachineController {
 
         User user = this.userService.getAuthenticatedUser(session);
 
-        Quiz quiz = this.gameService.generateQuiz();
+        if (this.userService.hasValidCoins(user, bet)) {
+            Quiz quiz = this.gameService.generateQuiz();
 
-        this.userService.updateUserAchievement(session, user, bet, this.gameService.solveQuiz(quiz));
+            this.userService.updateUserAchievement(session, user, bet, this.gameService.solveQuiz(quiz));
+        }
 
         return "redirect:/slot-machine";
     }
