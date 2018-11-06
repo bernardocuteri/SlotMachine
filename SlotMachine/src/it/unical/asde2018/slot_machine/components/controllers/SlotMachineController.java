@@ -30,10 +30,8 @@ public class SlotMachineController {
 	}
 	
 	@PostMapping("slot-machine")
-	public String faiGiocata(HttpSession session, Model model, @RequestParam String username, @RequestParam String password) {
-		if(session.getAttribute("giocata")==0) {
-			slotmachineService.
-		}
+	public String faiGiocata(HttpSession session, Model model) {
+		//slotmachineService.faiGiocata(model,session, @RequestParam String somma);
 		return "slot-machine";
 	}
 	
