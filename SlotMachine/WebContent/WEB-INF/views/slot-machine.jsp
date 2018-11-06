@@ -43,11 +43,22 @@
 
 
 <c:if test="${not empty message }" >
-	<h1>Message: ${message}</h1>
-	<h1>1: ${num1}</h1>
-	<h1>2: ${num2}</h1>
-	<h1>3: ${num3}</h1>
-</c:if>
+	<h1>Message: ${message}</h1>	
+	
+	<table>
+		<tr>
+			<td>
+			<img src="resources/${num1}.png" class="img-fluid" alt="Responsive image">
+			</td>
+			<td>
+			<img src="resources/${num2}.png" class="img-fluid" alt="Responsive image">
+			</td>
+			<td>
+				    	<img src="resources/${num3}.png" class="img-fluid" alt="Responsive image">
+			</td>
+		</tr>
+	</table>
+	</c:if>
   
   </div>
 </div>
