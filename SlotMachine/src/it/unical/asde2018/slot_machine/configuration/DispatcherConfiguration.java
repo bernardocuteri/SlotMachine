@@ -10,7 +10,7 @@ import org.springframework.web.servlet.view.InternalResourceViewResolver;
 
 @Configuration
 @EnableWebMvc
-@ComponentScan("it.unical.asde2018.slot_machine.components")
+@ComponentScan("it.unical.asde2018.slot_machine")
 public class DispatcherConfiguration implements WebMvcConfigurer {
 
 	@Bean
