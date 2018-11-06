@@ -47,7 +47,7 @@ footer {
 	<div class="container-fluid">
 		<div class="row content">
 			<div class="col-sm-3 sidenav">
-				<h4>Amazing Online Free Slot-Machine</h4>
+				<h4>Amazing Online Super MEGA ULTRA Fun-For-Free Slot-Machine</h4>
 				<br>
 				<div>
 					<h4>Welcome ${user}</h4>
@@ -62,16 +62,20 @@ footer {
 				<table class="table">
 				    <thead>
 				      <tr>
-				        <th>First</th>
-				        <th>Second</th>
-				        <th>Third</th>
+				        <th>Try</th>
+				        <th>Your</th>
+				        <th>Luck</th>
 				      </tr>
 				    </thead>
 				    <tbody>
 				      <tr>
-				        <td>Random Number</td>
-				        <td>Random Number</td>
-				        <td>Random Number</td>
+				        <c:forEach items="${numbers}" var="number">
+				        	<td>
+					        	<hr>
+								<img src="resources/${number }.png" class="img-rounded">
+								<hr>
+							</td>
+				      	</c:forEach>
 				      </tr>
 				    </tbody>
 				</table>

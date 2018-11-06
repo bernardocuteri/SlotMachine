@@ -47,6 +47,7 @@ public class SlotMachineController {
 				session.setAttribute("coins", (actualCoins - betsum)+(betsum*9 ));
 				model.addAttribute("win_msg", "FANTASTIC!! You won "+betsum*9+" coins. ");
 			}
+			model.addAttribute("numbers", numbers);
 			return "slot-machine";
 		}
 		if(actualCoins - betsum < 0) {
