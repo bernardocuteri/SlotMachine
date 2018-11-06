@@ -18,8 +18,6 @@ public class SlotMachineController
 	@GetMapping("/login")
 	public String indexSlot(Model model)
 	{
-		slotMachineServices.getMatch().setFirstGame(true);
-		model.addAttribute("firstGame", slotMachineServices.getMatch().isFirstGame());
 		return "redirect:/play";
 	}
 
@@ -27,6 +25,8 @@ public class SlotMachineController
 	public String play(Model model, @RequestParam int bet)
 	{
 		slotMachineServices.getMatch().setWin(false);
+		slotMachineServices.getMatch().setFirstGame(false);
+		model.addAttribute("firstGame", slotMachineServices.getMatch().isFirstGame());
 
 		slotMachineServices.getMatch().generateNumber();
 

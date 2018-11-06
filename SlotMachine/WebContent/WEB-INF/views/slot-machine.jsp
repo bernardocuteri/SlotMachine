@@ -11,7 +11,6 @@
 </head>
 <body>
 	<h1> Welcome to Slot Machine Game </h1>
-	<h2> Press Play button to start the game!</h2>
 
 	<c:choose>
 		<c:when test="${numberLeft == 0}">
@@ -49,7 +48,6 @@
 		</c:when>
 	</c:choose>		
 	<form action="play">
-		<c:if test="${not firstGame}">
 			<c:choose>
 				<c:when test="${win}">
 					<h2> Congrats, you win!</h2>
@@ -67,7 +65,6 @@
 					<h2> Your balance is 0, you can not bet anymore. </h2>
 				</c:otherwise>
 			</c:choose>
-		</c:if>
 		
 		<input type="number" class="form-control" placeholder="Enter your bet" name="bet">
 		<button type="submit" class="btn btn-primary">Play</button>
