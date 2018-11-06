@@ -28,6 +28,7 @@ public class SlotMachineController{
         model.addAttribute("value2", b);
         model.addAttribute("value3", c);
         model.addAttribute("result", slotMachinesService.checkWin(a, b, c, Integer.parseInt(optradio)));
+        model.addAttribute("coins",slotMachinesService.getCoins());
         return "slot-machine";
     }
 }

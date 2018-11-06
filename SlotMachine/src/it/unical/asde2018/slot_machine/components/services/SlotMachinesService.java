@@ -13,6 +13,14 @@ public class SlotMachinesService{
         coins = 200;
     }
 
+    public int getCoins(){
+        return coins;
+    }
+
+    public void setCoins(int coins){
+        this.coins = coins;
+    }
+
     public boolean hadMoney(){
         return coins > 5;
     }
