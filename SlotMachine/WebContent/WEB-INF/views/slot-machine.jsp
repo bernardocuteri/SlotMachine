@@ -5,10 +5,13 @@
 <link rel="stylesheet" type="text/css" href="resources/styles.css">
 </head>
 <body>
+   <jsp:include page="_header.jsp" />
+
 	<div>
 		<h1>Welcome ${user}</h1>
 		<h2>You have ${coins} coins</h2>
 	</div>
+	
 	<form class="form-horizontal" action="spin">
 		<div class="form-group">
 			<label class="control-label col-sm-2" for="bet">Bet:</label>
@@ -17,6 +20,9 @@
 					placeholder="Enter betting" name="bet">
 			</div>
 		</div>
+		<br>
+		<strong>${error}</strong>		
+		<br>				
 		<div class="form-group">
 			<div class="col-sm-offset-2 col-sm-10">
 				<button type="submit" class="btn btn-primary">Spin</button>
@@ -38,7 +44,7 @@
 		<input type="submit" class="btn btn-danger" value="Spin">
 
 		</form-->
-	<strong>${error}</strong>
+		<br>
 	<form action="logout">
 			<input type="submit" class="btn btn-danger" value="logout">
 	</form>

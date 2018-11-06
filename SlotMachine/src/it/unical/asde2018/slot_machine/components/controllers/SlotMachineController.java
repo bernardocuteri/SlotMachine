@@ -20,7 +20,8 @@ public class SlotMachineController {
 	public String spin(@RequestParam String bet,HttpSession session, Model model) {
 		if(slotMachineService.canBet(Integer.parseInt(bet))) {
 			model.addAttribute("coins", slotMachineService.howMuchCoins());
-			return "login";
+			model.addAttribute("error", "Not enough money");
+			return "slot-machine";
 		}
 		model.addAttribute("error", "Not enough money");
 		//model.addAttribute("coins", slotMachineService.setBetting(bet));
