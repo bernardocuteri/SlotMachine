@@ -1,4 +1,4 @@
-package it.unical.asde2018.slot_machine.configuration;
+package it.unical.asde2018.slot_machine.configurations;
 
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.ComponentScan;
