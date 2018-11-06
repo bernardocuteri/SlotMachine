@@ -57,6 +57,10 @@ public class LoginController {
 	public String play(Model model,@RequestParam int bets, HttpSession session) {
 		// TODO Auto-generated method stub
 		if(session.getAttribute("user")!=null) {
+			if(bets!=5 && bets!=10 && bets!=20) {
+				model.addAttribute("message","Admitted 5 10 or 15 Coins");
+				return "slot-machine";
+			}
 			if((int)session.getAttribute("coins")<=0) {
 				model.addAttribute("message","");
 				return "slot-machine";

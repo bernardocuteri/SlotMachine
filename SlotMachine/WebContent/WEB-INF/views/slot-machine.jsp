@@ -43,7 +43,7 @@
 
 
 <c:if test="${not empty message }" >
-	<h1>Message: ${message}</h1>	
+	<h1>${message}</h1>	
 	
 	<table>
 		<tr>
