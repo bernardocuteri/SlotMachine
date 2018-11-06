@@ -37,7 +37,7 @@ public class LoginController {
 		
 		if(loginService.login(username, password)) {
 			session.setAttribute("user", username);
-			return "redirect:/";
+			return "redirect:/result";
 		}
 		model.addAttribute("error", "Wrong credentials!");
 		return "login";
