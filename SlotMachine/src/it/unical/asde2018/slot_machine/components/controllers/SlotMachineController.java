@@ -24,14 +24,20 @@ public class SlotMachineController {
 		int bet = Integer.parseInt(bet_quantity);
 		List<Integer> results = slotMachineService.generateRandomArray();
 		UserGame userGame = (UserGame) session.getAttribute("userGame");
-		userGame.setCoins(userGame.getCoins() - bet);
-		userGame.setLastResults(results);
-		userGame.setLastBet(bet);
-		if (slotMachineService.isWin()) {
-			userGame.setCoins(userGame.getCoins() + (bet * 9));
+		if (userGame.getCoins() >= bet) {
+			userGame.setCoins(userGame.getCoins() - bet);
+			userGame.setLastResults(results);
+			userGame.setLastBet(bet);
+			if (slotMachineService.isWin()) {
+				userGame.setCoins(userGame.getCoins() + (bet * 9));
+			}
+			userGame.setLastBetIsWin(slotMachineService.isWin());
+			userGame.setLastBetAdmitted(true);
+			// System.out.println(results + ",, " + slotMachineService.isWin());
+		} else {
+			userGame.setLastBet(0);
+			userGame.setLastBetAdmitted(false);
 		}
-		userGame.setLastBetIsWin(slotMachineService.isWin());
-		// System.out.println(results + ",, " + slotMachineService.isWin());
 		session.setAttribute("userGame", userGame);
 		return "slot-machine";
 	}
@@ -42,6 +48,7 @@ public class SlotMachineController {
 		// if (userGame == null) {
 		// userGame = new UserGame(UserGame.INITIAL_COINS);
 		// }
+		userGame.setLastBet(0);
 		session.setAttribute("userGame", userGame);
 		return "slot-machine";
 	}

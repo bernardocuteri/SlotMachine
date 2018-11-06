@@ -16,6 +16,8 @@ public class UserGame {
 
 	private int lastBet = 0;
 
+	private boolean lastBetAdmitted = true;
+
 	public UserGame(User user, int coins) {
 		super();
 		this.user = user;
@@ -34,6 +36,10 @@ public class UserGame {
 		return lastResults;
 	}
 
+	public boolean isLastBetAdmitted() {
+		return lastBetAdmitted;
+	}
+
 	public boolean isLastBetIsWin() {
 		return lastBetIsWin;
 	}
@@ -45,6 +51,10 @@ public class UserGame {
 
 	public void setLastBet(int lastBet) {
 		this.lastBet = lastBet;
+	}
+
+	public void setLastBetAdmitted(boolean lastBetAdmitted) {
+		this.lastBetAdmitted = lastBetAdmitted;
 	}
 
 	public void setLastBetIsWin(boolean lastBetIsWin) {

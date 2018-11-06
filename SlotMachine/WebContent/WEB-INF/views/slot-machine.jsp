@@ -43,22 +43,36 @@
 					</div>
 				</c:if>
 			</c:if>
+			<c:if test="${not userGame.lastBetAdmitted}">
+					<div class="alert alert-danger">
+					  You can bet that amount!
+					</div>
+			</c:if>
 		</div>
 	</div>
 	
 	<div class="row">
-		<form action="game" method="post">
-			<div class="col-md-3">
-			<select class="form-control" id="exampleSelect1" name="bet_quantity" required>
-				<option>5</option>
-				<option>10</option>
-				<option>20</option>
-			</select>
-			</div>
-			<div class="col-md-2">
-			<button type="submit" class="btn btn-success">BET</button>
-			</div>
-		</form>
+		<c:choose>
+			<c:when test="${userGame.coins eq 0 }">
+				<div class="alert alert-danger">
+					  You have finished your coins!
+					</div>
+			</c:when>
+			<c:otherwise>
+				<form action="game" method="post">
+					<div class="col-md-3">
+					<select class="form-control" id="exampleSelect1" name="bet_quantity" required>
+						<option>5</option>
+						<option>10</option>
+						<option>20</option>
+					</select>
+					</div>
+					<div class="col-md-2">
+					<button type="submit" class="btn btn-success">BET</button>
+					</div>
+				</form>
+			</c:otherwise>
+		</c:choose>
 	</div>
 </div>
 </body>
