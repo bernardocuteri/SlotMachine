@@ -35,6 +35,12 @@
 	  	</div>
 	  	
 	  	<div class="row">
+	  		<c:if test="${not empty winMessage}">
+	  			<div class="alert alert-danger alert-dismissible" role="alert">
+	  				<button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+	  				<strong>${winMessage}</strong>
+				</div>
+	  		</c:if>
 	  		<c:if test="${coins ge 5}">
 	  			<c:forEach items="${slotMachine.slots}" var="slot">
 	  			<div class="col-sm-4">
