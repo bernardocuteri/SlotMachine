@@ -16,8 +16,14 @@ public class SlotMachineService {
 		numbers[0] = generateRandom();
 		numbers[1] = generateRandom();
 		numbers[2] = generateRandom();
-
-		Bet bet = new Bet(numbers, false);
+		boolean won = false;
+		if (numbers[0] == numbers[1] && numbers[0] == numbers[2]) {
+			won = true;
+			player.setAvailableCoins(player.getAvailableCoins() + betAmount * 9);
+		} else {
+			player.setAvailableCoins(player.getAvailableCoins() - betAmount);
+		}
+		Bet bet = new Bet(numbers, won);
 
 		return bet;
 	}

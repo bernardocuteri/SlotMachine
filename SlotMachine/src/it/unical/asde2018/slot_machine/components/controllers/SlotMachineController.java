@@ -10,6 +10,7 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestAttribute;
 
 import it.unical.asde2018.slot_machine.components.services.SlotMachineService;
+import it.unical.asde2018.slot_machine.model.Bet;
 import it.unical.asde2018.slot_machine.model.Player;
 
 @Controller
@@ -18,12 +19,15 @@ public class SlotMachineController {
 	@Autowired
 	private SlotMachineService machineService;
 
-	@PostMapping("/doBet")
+	@PostMapping("/slotmachine/doBet")
 	public String doBet(HttpSession session, @RequestAttribute int betAmount, Model model) {
 
 		if (betAmount < 5) {
 			model.addAttribute("message", "insufficient coins to bet");
 		}
+		Player player = (Player) session.getAttribute("user");
+		Bet bet = machineService.play(player, betAmount);
+		model.addAttribute("bet", bet);
 
 		return "redirect:/";
 	}
