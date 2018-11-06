@@ -9,6 +9,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
 import it.unical.asde2018.slot_machine.components.services.LoginService;
+import it.unical.asde2018.slot_machine.components.services.SlotMachineService;
 
 @Controller
 public class LoginController {
@@ -19,6 +20,7 @@ public class LoginController {
 	@GetMapping("/")
 	public String index(HttpSession session) {
 		if(session.getAttribute("user") != null) {
+			session.setAttribute("coins", SlotMachineService.STARTING_COINS);
 			return "slot-machine";
 		}
 		return "login";

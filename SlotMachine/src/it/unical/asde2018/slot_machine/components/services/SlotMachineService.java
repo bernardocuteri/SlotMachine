@@ -40,7 +40,8 @@ public class SlotMachineService {
 	public boolean bet(int coins, int [] values) {
 		this.coins -= coins;
 		if(values[0] == values[1] && values[0] == values[2]) {
-			this.coins += coins * 9;
+			coins *= 9;
+			this.coins += coins;
 			return true;			
 		}
 		return false;		

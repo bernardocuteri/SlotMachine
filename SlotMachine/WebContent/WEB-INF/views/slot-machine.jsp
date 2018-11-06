@@ -69,13 +69,12 @@ footer {
   		</form>
 	</div>
   	<div class="container">
+  	<c:if test ="${not empty values}">
+  		<p>${values[0]} ${values[1]} ${values[2]}</p> 
+  	</c:if>
   	<c:choose>
-  		<c:when test="${not empty values}">
-  			<p>${values[0]} ${values[1]} ${values[2]}</p>   
-  		</c:when>
   		<c:when test="${not empty won}">
   			<div class="alert alert-success">
-  				
   				<strong>You won the gamble!</strong>
   			</div>
   		</c:when>
@@ -85,8 +84,8 @@ footer {
   			</div>
   		</c:when>
   		<c:when test="${not empty insufficient}">
-  			<div class="alert alert-alert">
-  				<strong> ${insufficient} </strong>
+  			<div class="alert alert-danger">
+  				<strong>${insufficient} </strong>
   			</div>
   		</c:when>
 	</c:choose>

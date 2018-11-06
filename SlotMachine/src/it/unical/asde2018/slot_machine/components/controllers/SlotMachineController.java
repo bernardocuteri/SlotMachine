@@ -24,9 +24,10 @@ public class SlotMachineController {
 			} else {
 				model.addAttribute("lost", slotMachineService.getCoins());
 			}
-			return "redirect:/";	
+			return "slot-machine";	
 		}
+		model.addAttribute("coins", slotMachineService.getCoins());
 		model.addAttribute("insufficient", "Insufficient Coins!");
-		return "redirect:/";
+		return "slot-machine";
 	}
 }
