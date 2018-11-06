@@ -1,9 +1,19 @@
+<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
+    pageEncoding="ISO-8859-1"%>
 <!DOCTYPE html>
 <html>
 <head>
-<title>Insert title here</title>
+<meta charset="ISO-8859-1">
+<title>Login Page</title>
 </head>
 <body>
-<h1>Hello world</h1>
+
+<h1>Login</h1>
+<p>${error}</p>
+<form action= "login" method="post">
+<label>username</label><input type="text" name="username"/>
+<label>password</label><input type="password" name="password"/>
+<input type="submit">
+</form>
 </body>
 </html>
