@@ -35,14 +35,7 @@
 						placeholder="Enter password" name="password">
 				</div>
 			</div>
-			<div class="form-group">
-				<div class="col-sm-offset-2 col-sm-10">
-					<div class="checkbox">
-						<label><input type="checkbox" name="remember">
-							Remember me</label>
-					</div>
-				</div>
-			</div>
+		
 			<div class="form-group">
 				<div class="col-sm-offset-2 col-sm-10">
 					<button type="submit" class="btn btn-primary">Submit</button>
