@@ -22,7 +22,7 @@ public class SlotMachineController
 		{
 			if (sms.getLoggedUsers(session.getAttribute("username").toString()).getCoins() <= 0)
 				model.addAttribute("error", "Non hai crediti sufficienti");
-
+			
 			model.addAttribute("values", sms.getTriple());
 			model.addAttribute("user", sms.getLoggedUsers(session.getAttribute("username").toString()));
 		}

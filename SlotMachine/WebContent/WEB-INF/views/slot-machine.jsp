@@ -75,7 +75,7 @@
 							</div>
 							<div class="col-sm-4">
 								<c:if test="${not empty winlose}">
-									<div class="alert alert-info">${winlose }</div>
+									<div class="alert alert-info">${winlose}</div>
 								</c:if>
 							</div>
 						</div>
