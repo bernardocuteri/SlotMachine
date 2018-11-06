@@ -4,7 +4,7 @@
 <title>SlotMachine</title>
 </head>
 <body>
-<h1>Welcome ${player.name } your coins are : ${player.bet }</h1>
+<h1>Welcome ${player.name } your coins are : ${player.coins }</h1>
 
  <form>
   <input type="radio" name="bet" value="5" checked> 5<br>

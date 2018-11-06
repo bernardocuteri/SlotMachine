@@ -17,9 +17,9 @@ public class Player
 		return coins;
 	}
 
-	public void setCoins(int bet)
+	public void setCoins(int coins)
 	{
-		this.coins = bet;
+		this.coins = coins;
 	}
 
 	public String getName()
