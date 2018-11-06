@@ -26,17 +26,17 @@
   <div class="card-deck">
     <div class="card bg-success">
       <div class="card-body text-center">
-        <p class="card-text">${result.n1 }</p>
+        <p class="card-text">Number1:<br>${result.n1 }</p>
       </div>
     </div>
     <div class="card bg-success">
       <div class="card-body text-center">
-        <p class="card-text">${result.n2 }</p>
+        <p class="card-text">Number2:<br>${result.n2 }</p>
       </div>
     </div>
     <div class="card bg-success">
       <div class="card-body text-center">
-        <p class="card-text">${result.n3 }</p>
+        <p class="card-text">Number3<br>${result.n3 }</p>
       </div>
     </div>  
   </div>
@@ -68,6 +68,25 @@
     </form>
     </div>
   </div>
+  <c:if test="${result != null }">
+	<c:choose>
+		<c:when test="${result.allEquals() }">
+			<div class="alert alert-info">
+			<a href="#" class="close" data-dismiss="alert">&times;</a>
+			  <strong>You Won!!</strong> <br> 
+			</div>
+		</c:when>
+		<c:otherwise>
+			<div class="alert alert-danger">
+			<a href="#" class="close" data-dismiss="alert">&times;</a>
+			  <strong>You lose!</strong>
+			</div>
+		</c:otherwise>
+	</c:choose>
+</c:if>
 </div>
+
+
+
 </body>
 </html>
