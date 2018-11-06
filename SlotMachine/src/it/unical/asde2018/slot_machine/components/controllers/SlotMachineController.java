@@ -25,7 +25,7 @@ public class SlotMachineController {
 			int creditVariation = slotMachineService.creditVariation(betAmount, spinResult);
 			session.setAttribute("lastSpin", spinResult);
 			session.setAttribute("credit", actualCredit+creditVariation);
-			session.setAttribute("SMMessage", "You "+(creditVariation>0?"won ":"lost ")+Math.abs(creditVariation)+"coins");
+			session.setAttribute("SMMessage", "You "+(creditVariation>0?"won ":"lost ")+Math.abs(creditVariation)+" coins");
 		}else {
 			session.setAttribute("SMMessage", "Error: insufficient credit to place that bet");
 		}

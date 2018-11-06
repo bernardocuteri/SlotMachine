@@ -26,39 +26,43 @@
 		</div>
 	</nav>
 	
-	User: ${user} , Credit: ${credit}<br>
+	<table align="right">
+		<tr>
+			<td><b>User</b></td>
+			<td><i>${user}</i></td>
+		</tr>
+		<tr>
+			<td><b>Credit</b></td>
+			<td><i> ${credit}</i></td>
+		</tr>
+	</table>
 	
-	Last Spin:
 	<c:forEach items="${lastSpin}" var="value">
- 		 <li><c:out value="${value}"/></li>
  		 <c:if test = "${value == 0}">
 	 		 <div class="col-sm-2 text-center">
-				<img src="resources/0.png" class="img-circle" height="65"
-					width="65" alt="0">
+				<img src="resources/0.png" class="img-circle" height="110"
+					width="110" alt="0">
 			</div>
 		</c:if>
 		 <c:if test = "${value == 1}">
 	 		 <div class="col-sm-2 text-center">
-				<img src="resources/1.png" class="img-circle" height="65"
-					width="65" alt="1">
+				<img src="resources/1.png" class="img-circle" height="110"
+					width="110" alt="1">
 			</div>
 		</c:if> <c:if test = "${value == 2}">
 	 		 <div class="col-sm-2 text-center">
-				<img src="resources/2.png" class="img-circle" height="65"
-					width="65" alt="2">
+				<img src="resources/2.png" class="img-circle" height="110"
+					width="110" alt="2">
 			</div>
 		</c:if>
 		
  	</c:forEach><br>
  	
-	Message: ${SMMessage}
-
 	<form class="form-horizontal" action="play">
 		<div class="form-group">
-			<label class="control-label col-sm-2" for="betAmount">Bet:</label>
 			<div class="col-sm-10">
 				<input type="number" class="form-control" id="betAmount"
-					placeholder="Place your bet..." name="betAmount">
+					placeholder="Place your bet..." name="betAmount" min="5" max="20" step="5" width="50">
 			</div>
 		</div>
 		<div class="form-group">
@@ -67,6 +71,8 @@
 			</div>
 		</div>
 	</form>
+	<blockquote> ${SMMessage}</blockquote>
+
 
 </body>
 </html>
