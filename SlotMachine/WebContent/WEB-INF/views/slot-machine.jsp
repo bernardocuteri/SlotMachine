@@ -19,6 +19,10 @@
 .center {
 	text-align: center;
 }
+
+.numbers{
+	padding: 20px;
+}
 </style>
 <title>Slot Machine</title>
 </head>
@@ -28,7 +32,7 @@
 	<nav class="navbar navbar-default">
 		<div class="container-fluid">
 			<div class="navbar-header">
-				<a class="navbar-brand" href="#">Guess a number</a>
+				<a class="navbar-brand" href="#">Slot Machine</a>
 			</div>
 			<ul class="nav navbar-nav">
 				<li class="active"><a href="#">Home</a></li>
@@ -58,7 +62,7 @@
 					</form>
 				</div>
 			</c:when>
-			<c:when test="${started and empty finished }">
+			<c:when test="${started and credits>0 }">
 				<div class="row">
 					<h2>hello, your credits are ${credits }</h2>
 					<div class="col-lg-3">
@@ -67,39 +71,44 @@
 					<div class="col-lg-3">
 						<form action="" method="post">
 							<input type=hidden value="5" name="bet" /> <input type="submit"
-								value="5 Dollars" class="btn btn-info">
+								value="5 Dollars" class="btn btn-primary btn-lg">
 
 						</form>
 					</div>
 					<div class="col-lg-3">
 						<form action="" method="post">
 							<input type=hidden value="10" name="bet" /> <input type="submit"
-								value="10 Dollars" class="btn btn-info">
+								value="10 Dollars" class="btn btn-primary btn-lg">
 
 						</form>
 					</div>
 					<div class="col-lg-3">
 						<form action="" method="post">
 							<input type=hidden value="20" name="bet" /> <input type="submit"
-								value="20 Dollars" class="btn btn-info">
+								value="20 Dollars" class="btn btn-primary btn-lg">
 
 						</form>
 					</div>
 				</div>
-				<div class="row">
+				<div class="row numbers">
 					<c:forEach items="${numbers }" var="number">
-						<div class="col-lg-4">
+						<div class="col-lg-4 center">
 							<img alt="${number }" src="resources/${number}.png">
 						</div>
 					</c:forEach>
 				</div>
-	${won }
+				<c:if test="${won}">
+					<div class="col-lg-4 col-lg-offset-4 alert alert-success">
+						<strong>Success!</strong> you won.
+					</div>
+
+				</c:if>
 
 
 
-	</c:when>
+			</c:when>
 			<c:otherwise>
-				<h2>${finished }</h2>
+				<h2>You have finished your credits</h2>
 				<form action="" method="post">
 
 					<input class="btn btn-info" type="submit" value="Restart" />

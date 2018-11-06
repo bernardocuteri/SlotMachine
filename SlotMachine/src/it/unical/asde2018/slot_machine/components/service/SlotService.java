@@ -49,7 +49,6 @@ public class SlotService {
 	}
 
 	public void startGame(String user){
-		System.out.println(user);
 		credits.put(user, 200);
 	}
 }

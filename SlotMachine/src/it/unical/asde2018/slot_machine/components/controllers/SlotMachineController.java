@@ -18,10 +18,9 @@ public class SlotMachineController {
 
 	@GetMapping("/")
 	public String goToSlot(HttpSession session){
-		System.out.println(session.getAttribute("user"));
 		if(session.getAttribute("user")!=null)
 			return "slot-machine";
-		return "login";
+		return "redirect:/login";
 	}
 
 	@PostMapping("/")
