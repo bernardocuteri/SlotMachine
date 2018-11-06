@@ -52,8 +52,11 @@ footer {
 		</div>
 	</div>
 	<div class="form-group col-sm-4" style="padding-top: 20px">
-		<input type="text" class="form-control" placeholder="Inserisci la puntata">
-		<input type="submit" class="btn btn-primary">
+		<form class="form-horizontal" action="bet">
+			<input type="text" name="bet" class="form-control"
+				placeholder="Inserisci la puntata"> <input type="submit"
+				class="btn btn-primary">
+		</form>
 	</div>
 </body>
 </html>

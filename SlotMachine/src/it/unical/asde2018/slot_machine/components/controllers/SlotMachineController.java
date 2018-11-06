@@ -1,5 +1,6 @@
 package it.unical.asde2018.slot_machine.components.controllers;
 
+import javax.servlet.http.HttpSession;
 import javax.websocket.Session;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -16,13 +17,14 @@ public class SlotMachineController {
 	@Autowired
 	private SlotMachineService slotMachineService;
 	
+	
 	@GetMapping("/bet")
 	public String bet(@RequestParam String bet, Session session, Model model) {
 		
 		System.out.println("puntata ----> " + bet);
 //		slotMachine.spin();
 		
-		return "redirect:/";
+		return "slot-machine";
 	}
 	
 }
